@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://wkd18bgl7seu"]
+
+[ext_resource type="Script" uid="uid://cxymsw8v5c1i6" path="res://demo/Scripts/Heroi.gd" id="1"]
+
+[sub_resource type="CapsuleShape3D" id="1"]
+radius = 0.82333
+height = 2.50018
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oj0ea"]
+
+[sub_resource type="Sky" id="Sky_5kelu"]
+sky_material = SubResource("ProceduralSkyMaterial_oj0ea")
+
+[sub_resource type="Environment" id="Environment_xkfh0"]
+background_mode = 2
+sky = SubResource("Sky_5kelu")
+
+[node name="Heroi" type="CharacterBody3D"]
+script = ExtResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("1")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+current = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+environment = SubResource("Environment_xkfh0")
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]

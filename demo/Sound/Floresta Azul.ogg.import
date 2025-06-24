@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ok6p6lqbk0d3"
+path="res://.godot/imported/Floresta Azul.ogg-fe5ff8d77c15d2a02f49310a02fd1c02.oggvorbisstr"
+
+[deps]
+
+source_file="res://demo/Sound/Floresta Azul.ogg"
+dest_files=["res://.godot/imported/Floresta Azul.ogg-fe5ff8d77c15d2a02f49310a02fd1c02.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

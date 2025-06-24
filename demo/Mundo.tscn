@@ -1,0 +1,389 @@
+[gd_scene load_steps=46 format=3 uid="uid://dosk60sme8roq"]
+
+[ext_resource type="PackedScene" uid="uid://ddwuxu1yo5sfp" path="res://demo/Prefab/Chao.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://wkd18bgl7seu" path="res://demo/Prefab/Heroi.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bn6oqw3mmrgal" path="res://demo/Prefab/Parede.tscn" id="2_uegni"]
+[ext_resource type="PackedScene" uid="uid://bfhr2g5l0n74y" path="res://demo/Prefab/EmissorVerd.tscn" id="3"]
+[ext_resource type="Script" uid="uid://5q6r1jymdlox" path="res://demo/Scripts/Area.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://c6ujga8a5iwes" path="res://demo/Prefab/EmissorVermelho.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://bf6nwjs77drtq" path="res://demo/Prefab/EmissorCentro.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cn1n57sp0cam1" path="res://demo/Prefab/EmissorAzul.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://c20vgvf4gp5j2" path="res://demo/Prefab/EmissorAmarelo.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://d0xjqbisyjixg" path="res://demo/Prefab/Inimigo.tscn" id="9"]
+[ext_resource type="Script" uid="uid://depss5xs31nbh" path="res://addons/synesthetic_sound_color/scripts/sound_color_manager.gd" id="12_uegni"]
+[ext_resource type="Texture2D" uid="uid://hcy4xujyocnw" path="res://demo/Textures/example_texture_escamas.png" id="13_syf7j"]
+[ext_resource type="Texture2D" uid="uid://o0avx1w2f1fn" path="res://demo/Textures/example_texture_3.png" id="14_7dq3s"]
+[ext_resource type="AudioStream" uid="uid://cnqjswpde7fg1" path="res://addons/synesthetic_sound_color/assets/audio/re_amarelo.ogg" id="14_g13pu"]
+[ext_resource type="AudioStream" uid="uid://bv51q6d2gtobh" path="res://addons/synesthetic_sound_color/assets/audio/do_verde.ogg" id="15_vblcf"]
+[ext_resource type="Texture2D" uid="uid://bh31lfb5v5wjb" path="res://demo/Textures/example_texture.png" id="16_hk8x4"]
+[ext_resource type="AudioStream" uid="uid://ptcubmpsw0ix" path="res://addons/synesthetic_sound_color/assets/audio/fa_vermelho.ogg" id="17_bi0k3"]
+[ext_resource type="AudioStream" uid="uid://co0uq6ish57y6" path="res://addons/synesthetic_sound_color/assets/audio/la_azul.ogg" id="18_7kmea"]
+
+[sub_resource type="GDScript" id="1"]
+script/source = "extends Area3D
+
+@onready var emissor = get_child(1).get_child(1)
+
+func _ready():
+	emissor.stop()
+
+func _on_Area_body_entered(body):
+	if body.is_in_group(\"player\"):
+		emissor.play()
+		print(\"entrou\")
+
+func _on_Area_body_exited(body):
+	if body.is_in_group(\"player\"):
+		emissor.stop()
+"
+
+[sub_resource type="BoxShape3D" id="2"]
+size = Vector3(48.2352, 11.437, 59.3932)
+
+[sub_resource type="GDScript" id="3"]
+script/source = "extends Area3D
+
+@onready var emissor = get_child(1).get_child(1)
+
+func _ready():
+	emissor.stop()
+
+func _on_Area_body_entered(body):
+	if body.is_in_group(\"player\"):
+		emissor.play()
+		print(\"entrou\")
+
+func _on_Area_body_exited(body):
+	if body.is_in_group(\"player\"):
+		emissor.stop()"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rmau"]
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("14_7dq3s")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vblcf"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+albedo_texture = ExtResource("14_7dq3s")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_hk8x4"]
+material = SubResource("StandardMaterial3D_vblcf")
+size = Vector3(4, 10, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8g20"]
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("13_syf7j")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w05dh"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+albedo_texture = ExtResource("13_syf7j")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dq3s"]
+material = SubResource("StandardMaterial3D_w05dh")
+size = Vector3(4, 10, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddl0i"]
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("14_7dq3s")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gi3ff"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+albedo_texture = ExtResource("14_7dq3s")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_jrtib"]
+material = SubResource("StandardMaterial3D_gi3ff")
+size = Vector3(4, 10, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvtyl"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("13_syf7j")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jx5eo"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+albedo_texture = ExtResource("13_syf7j")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_oq5qj"]
+material = SubResource("StandardMaterial3D_jx5eo")
+size = Vector3(4, 10, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vuyr"]
+albedo_color = Color(0, 0, 1, 1)
+albedo_texture = ExtResource("16_hk8x4")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ak346"]
+albedo_color = Color(0.377919, 0.377919, 0.377919, 1)
+albedo_texture = ExtResource("16_hk8x4")
+distance_fade_mode = 1
+distance_fade_max_distance = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_gi3ff"]
+material = SubResource("StandardMaterial3D_ak346")
+size = Vector3(4, 10, 4)
+
+[sub_resource type="Gradient" id="Gradient_l6pcx"]
+offsets = PackedFloat32Array(0, 0.935943)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7kmea"]
+noise_type = 2
+frequency = 0.02
+cellular_jitter = 0.035
+cellular_return_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wigbj"]
+in_3d_space = true
+seamless = true
+color_ramp = SubResource("Gradient_l6pcx")
+noise = SubResource("FastNoiseLite_7kmea")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oe83h"]
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = SubResource("NoiseTexture2D_wigbj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tc4rf"]
+albedo_texture = SubResource("NoiseTexture2D_wigbj")
+
+[sub_resource type="SphereMesh" id="SphereMesh_4yypl"]
+material = SubResource("StandardMaterial3D_tc4rf")
+radius = 6.0
+height = 12.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nhhj"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("13_syf7j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umhgv"]
+albedo_texture = ExtResource("13_syf7j")
+
+[sub_resource type="PrismMesh" id="PrismMesh_tnhei"]
+material = SubResource("StandardMaterial3D_umhgv")
+size = Vector3(6, 6, 6)
+
+[node name="Mundo" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Areas" type="Node3D" parent="Map"]
+
+[node name="Area3D" type="Area3D" parent="Map/Areas"]
+transform = Transform3D(2.36289, 0, 0, 0, 2.36289, 0, 0, 0, 2.36289, 50.5995, 0, -53.9335)
+input_ray_pickable = false
+angular_damp = 1.0
+script = SubResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Areas/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00907, 0, -6.12615)
+visible = false
+shape = SubResource("2")
+
+[node name="Emissor" parent="Map/Areas/Area3D" instance=ExtResource("3")]
+transform = Transform3D(-3, 4.52987e-07, 0, -4.52987e-07, -3, 0, 0, 0, 3, 14.4592, 0.0727079, -19.481)
+
+[node name="Area3" type="Area3D" parent="Map/Areas"]
+transform = Transform3D(2.36289, 0, 0, 0, 2.36289, 0, 0, 0, 2.36289, -48.5029, 0, -53.9335)
+input_ray_pickable = false
+angular_damp = 1.0
+script = ExtResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Areas/Area3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94169, -0.00315861, -5.87136)
+visible = false
+shape = SubResource("2")
+
+[node name="Emissor" parent="Map/Areas/Area3" instance=ExtResource("5")]
+transform = Transform3D(-3, 2.62268e-07, 0, -2.62268e-07, -3, 0, 0, 0, 3, -15.3089, 0.0727111, -21.8698)
+
+[node name="Area5" type="Area3D" parent="Map/Areas"]
+transform = Transform3D(1.57874, 0, 0, 0, 1.57874, 0, 0, 0, 1.57874, -0.273163, 7.62939e-06, 0.310349)
+input_ray_pickable = false
+angular_damp = 1.0
+script = SubResource("3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Areas/Area5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.751387, -0.00315861, -1.92193)
+visible = false
+shape = SubResource("2")
+
+[node name="Emissor" parent="Map/Areas/Area5" instance=ExtResource("6")]
+transform = Transform3D(-3, 2.62269e-07, 0, -2.62269e-07, -3, 0, 0, 0, 3, 0, 7.87853, 0)
+
+[node name="Area2" type="Area3D" parent="Map/Areas"]
+transform = Transform3D(2.36289, 0, 0, 0, 2.36289, 0, 0, 0, 2.36289, 50.5995, 0, 65.5584)
+input_ray_pickable = false
+angular_damp = 1.0
+script = ExtResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Areas/Area2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62778, -1.29154e-05, 0.719679)
+visible = false
+shape = SubResource("2")
+
+[node name="Emissor" parent="Map/Areas/Area2" instance=ExtResource("7")]
+transform = Transform3D(-3, 2.62268e-07, 0, -2.62268e-07, -3, 0, 0, 0, 3, 13.8551, 0.0727079, 14.8931)
+
+[node name="Area4" type="Area3D" parent="Map/Areas"]
+transform = Transform3D(2.36289, 0, 0, 0, 2.36289, 0, 0, 0, 2.36289, -46.9372, 0, 65.5584)
+input_ray_pickable = false
+angular_damp = 1.0
+script = ExtResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Areas/Area4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58492, 0, 1.26649)
+visible = false
+shape = SubResource("2")
+
+[node name="Emissor" parent="Map/Areas/Area4" instance=ExtResource("8")]
+transform = Transform3D(-3, 2.62268e-07, 0, -2.62268e-07, -3, 0, 0, 0, 3, -16.1886, 0.0727144, 15.627)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map"]
+transform = Transform3D(0.547563, 0.566386, -0.61594, 0, 0.736097, 0.676876, 0.836764, -0.370632, 0.40306, -23.5893, 40.5485, 0)
+
+[node name="Chao" parent="Map" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Paredes" type="Node3D" parent="Map"]
+
+[node name="Parede" parent="Map/Paredes" instance=ExtResource("2_uegni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.5, 3, 0)
+
+[node name="Parede2" parent="Map/Paredes" instance=ExtResource("2_uegni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.5, 3, 0)
+
+[node name="Parede3" parent="Map/Paredes" instance=ExtResource("2_uegni")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3, 128)
+
+[node name="Parede4" parent="Map/Paredes" instance=ExtResource("2_uegni")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.126892, 3, -128.007)
+
+[node name="Hero" parent="." groups=["player"] instance=ExtResource("2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -60.5412, 4.69361, 0)
+
+[node name="Yellow" parent="." instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.078, 0, 67.0143)
+SelectedColor = 4
+
+[node name="Retangulo" parent="Yellow" index="0"]
+material_override = SubResource("StandardMaterial3D_5rmau")
+mesh = SubResource("BoxMesh_hk8x4")
+
+[node name="Audio" parent="Yellow" index="1"]
+stream = ExtResource("14_g13pu")
+
+[node name="Yellow2" type="Node3D" parent="." node_paths=PackedStringArray("mesh_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.67807, 0, -86.4775)
+script = ExtResource("12_uegni")
+SelectedColor = 4
+mesh_node = NodePath("Retangulo")
+
+[node name="Retangulo" type="MeshInstance3D" parent="Yellow2"]
+transform = Transform3D(1, 2.84217e-14, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+material_override = SubResource("StandardMaterial3D_d8g20")
+mesh = SubResource("BoxMesh_7dq3s")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Yellow2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+stream = ExtResource("14_g13pu")
+volume_db = 10.0
+unit_size = 1.0
+max_db = 2.0
+autoplay = true
+max_distance = 100.0
+
+[node name="Green" parent="." instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.04, 0, -34.8357)
+SelectedColor = 2
+
+[node name="Retangulo" parent="Green" index="0"]
+material_override = SubResource("StandardMaterial3D_ddl0i")
+mesh = SubResource("BoxMesh_jrtib")
+
+[node name="Audio" parent="Green" index="1"]
+stream = ExtResource("15_vblcf")
+
+[node name="Red" type="Node3D" parent="." node_paths=PackedStringArray("mesh_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.4683, 0, 35.4518)
+script = ExtResource("12_uegni")
+SelectedColor = 3
+mesh_node = NodePath("Retangulo")
+
+[node name="Retangulo" type="MeshInstance3D" parent="Red"]
+transform = Transform3D(1, 2.84217e-14, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+material_override = SubResource("StandardMaterial3D_wvtyl")
+mesh = SubResource("BoxMesh_oq5qj")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Red"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+stream = ExtResource("17_bi0k3")
+volume_db = 10.0
+unit_size = 1.0
+max_db = 2.0
+autoplay = true
+max_distance = 100.0
+
+[node name="Blue" parent="." instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2411, 4.00732, -35.6052)
+SelectedColor = 1
+
+[node name="Retangulo" parent="Blue" index="0"]
+material_override = SubResource("StandardMaterial3D_2vuyr")
+mesh = SubResource("BoxMesh_gi3ff")
+
+[node name="Audio" parent="Blue" index="1"]
+stream = ExtResource("18_7kmea")
+
+[node name="SphereMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5542, 7.84333, 15.5941)
+material_override = SubResource("StandardMaterial3D_oe83h")
+mesh = SubResource("SphereMesh_4yypl")
+
+[node name="SoundColor3D" type="Node3D" parent="SphereMesh" node_paths=PackedStringArray("mesh_node")]
+script = ExtResource("12_uegni")
+SelectedColor = 2
+mesh_node = NodePath("..")
+metadata/_custom_type_script = "uid://depss5xs31nbh"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.2586, 4.49632, -40.5519)
+material_override = SubResource("StandardMaterial3D_2nhhj")
+mesh = SubResource("PrismMesh_tnhei")
+skeleton = NodePath("../Blue")
+
+[node name="SoundColor3D" type="Node3D" parent="MeshInstance3D" node_paths=PackedStringArray("mesh_node")]
+script = ExtResource("12_uegni")
+SelectedColor = 3
+mesh_node = NodePath("..")
+metadata/_custom_type_script = "uid://depss5xs31nbh"
+
+[connection signal="body_entered" from="Map/Areas/Area3D" to="Map/Areas/Area3D" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Map/Areas/Area3D" to="Map/Areas/Area3D" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Map/Areas/Area3" to="Map/Areas/Area3" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Map/Areas/Area3" to="Map/Areas/Area3" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Map/Areas/Area5" to="Map/Areas/Area5" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Map/Areas/Area5" to="Map/Areas/Area5" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Map/Areas/Area2" to="Map/Areas/Area2" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Map/Areas/Area2" to="Map/Areas/Area2" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Map/Areas/Area4" to="Map/Areas/Area4" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Map/Areas/Area4" to="Map/Areas/Area4" method="_on_Area_body_exited"]
+
+[editable path="Hero"]
+[editable path="Yellow"]
+[editable path="Green"]
+[editable path="Blue"]

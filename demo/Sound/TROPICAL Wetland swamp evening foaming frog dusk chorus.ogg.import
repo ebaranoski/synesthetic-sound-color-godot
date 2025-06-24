@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bccrb6pru1hy"
+path="res://.godot/imported/TROPICAL Wetland swamp evening foaming frog dusk chorus.ogg-3c79ccf5332b6932ae0cad6822d8efbc.oggvorbisstr"
+
+[deps]
+
+source_file="res://demo/Sound/TROPICAL Wetland swamp evening foaming frog dusk chorus.ogg"
+dest_files=["res://.godot/imported/TROPICAL Wetland swamp evening foaming frog dusk chorus.ogg-3c79ccf5332b6932ae0cad6822d8efbc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

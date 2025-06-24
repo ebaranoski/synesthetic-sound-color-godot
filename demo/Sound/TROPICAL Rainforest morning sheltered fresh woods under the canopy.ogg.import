@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://drgsjkmkhhejc"
+path="res://.godot/imported/TROPICAL Rainforest morning sheltered fresh woods under the canopy.ogg-0ef6b59139a617c0e795d73b4714fa3f.oggvorbisstr"
+
+[deps]
+
+source_file="res://demo/Sound/TROPICAL Rainforest morning sheltered fresh woods under the canopy.ogg"
+dest_files=["res://.godot/imported/TROPICAL Rainforest morning sheltered fresh woods under the canopy.ogg-0ef6b59139a617c0e795d73b4714fa3f.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

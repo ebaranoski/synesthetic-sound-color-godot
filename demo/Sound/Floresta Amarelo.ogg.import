@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://nkwcodbhlun2"
+path="res://.godot/imported/Floresta Amarelo.ogg-09fbc31fe91d73f77b85bd12bb880fec.oggvorbisstr"
+
+[deps]
+
+source_file="res://demo/Sound/Floresta Amarelo.ogg"
+dest_files=["res://.godot/imported/Floresta Amarelo.ogg-09fbc31fe91d73f77b85bd12bb880fec.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

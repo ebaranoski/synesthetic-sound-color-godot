@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1n2e13xfg2v3"
+path="res://.godot/imported/TROPICAL Rainforest night sleep with soft sparse bird calls.ogg-93060bbe04fe1eef3618192ce70d2b6c.oggvorbisstr"
+
+[deps]
+
+source_file="res://demo/Sound/TROPICAL Rainforest night sleep with soft sparse bird calls.ogg"
+dest_files=["res://.godot/imported/TROPICAL Rainforest night sleep with soft sparse bird calls.ogg-93060bbe04fe1eef3618192ce70d2b6c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

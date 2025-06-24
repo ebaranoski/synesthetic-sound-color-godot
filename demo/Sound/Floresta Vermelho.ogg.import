@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bwxjphc1fy1xb"
+path="res://.godot/imported/Floresta Vermelho.ogg-8a7b59c209b815273ab21ec3165d3c3c.oggvorbisstr"
+
+[deps]
+
+source_file="res://demo/Sound/Floresta Vermelho.ogg"
+dest_files=["res://.godot/imported/Floresta Vermelho.ogg-8a7b59c209b815273ab21ec3165d3c3c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
