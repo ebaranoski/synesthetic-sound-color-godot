@@ -6,6 +6,9 @@ This plugin was developed as part of a final project exploring synesthetic feedb
 
 ## DevLog
 
+### Version 1.0.1
+- Multiple surface compatibility
+
 ### Version 1.0.0
 - Plugin release
 
