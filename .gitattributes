@@ -1,3 +1,8 @@
-/*               export-ignore
-!/addons/        export-ignore
-!/addons/**      export-ignore
+/demo/                                           export-ignore
+/screenshots/                                    export-ignore
+README.md                                        export-ignore
+LICENSE                                          export-ignore
+synesthetic-sound-color-godot.code-workspace     export-ignore
+project.godot                                    export-ignore
+.gitignore                                       export-ignore
+.gitattributes                                   export-ignore
